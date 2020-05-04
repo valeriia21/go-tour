@@ -18,15 +18,7 @@ func main() {
 
 }
 
-type User struct {
-	FirstName string `json:"first_name"`
-	LastName  string `json:"last_name"`
-}
-
 func mainPage(w http.ResponseWriter, r *http.Request) {
-	//user := User{"Вася","Иванов"}
-	//js, _ := json.Marshal (user)
-
 	tmpl, err := template.ParseFiles("index.html")
 	if err != nil {
 		http.Error(w, err.Error(), 400)
